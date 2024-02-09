@@ -1,6 +1,15 @@
-#div-test, .div-test, div {
+#div-test, .div-test/*, div*/ {
     cursor: pointer;
     width: 300px;
     height: 280px;
     background-color: blue;
+}
+
+.redclass {
+    color: red;
+    font-style: italic
+}
+
+#divMsg {
+    display: none;
 }
