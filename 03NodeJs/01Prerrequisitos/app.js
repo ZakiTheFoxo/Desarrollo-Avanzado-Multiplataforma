@@ -55,29 +55,34 @@ const getSalario = (id) => {
 // Consulta Empleado - Salario
 let id = 3;
 
-// Consulta con promesas
-// getEmpleado(id, (err, empleado) => {
-//     if(err) { return console.log(err); }
-    
-//     getSalario(id, (err, salario) => {
-//         if (err) { return console.log(err); }
+// getEmpleado(id)
+//     .then((empleado) => { console.log(empleado) })
+//     .catch((err) => { console.log(err); });
 
-//         console.log(`El empleado ${empleado} gana ${salario}`);
-//     });
-// });
+// getSalario(id)
+//     .then((salario) => { console.log(salario) })
+//     .catch((err) => { console.log(err); });
 
-getEmpleado(id)
-    .then((empleado) => { console.log(empleado) })
-    .catch((err) => { console.log(err); });
+// getEmpleado(id)
+//     .then((empleado) => 
+//         getSalario(id)
+//             .then((salario) => { console.log(`El empleado ${empleado} gana ${salario}`) })
+//             .catch((err) => { console.log(err) })
+//     )
+//     .catch((err) => { console.log(err) });
 
-getSalario(id)
-    .then((salario) => { console.log(salario) })
-    .catch((err) => { console.log(err); });
+// getEmpleado(id).then( (empleado) => {
+//     emp = empleado;
+//     return getSalario(id); }).then( (salario) => {
+//         console.log(`El empleado ${emp} gana ${salario}`);
+// }).catch( (err) => console.log(err));
 
-getEmpleado(id)
-    .then((empleado) => 
-        getSalario(id)
-            .then((salario) => { console.log(`El empleado ${empleado} gana ${salario}`) })
-            .catch((err) => { console.log(err) })
-    )
-    .catch((err) => { console.log(err) });
+getInfoUsuario = async (id) => {
+    const empleado = await getEmpleado(id);
+    const salario = await getSalario(id);
+    return `El empleado ${empleado} gana ${salario}`;
+};
+
+getInfoUsuario(id)
+    .then( usuario => console.log(usuario))
+    .catch( err => console.log(err));
