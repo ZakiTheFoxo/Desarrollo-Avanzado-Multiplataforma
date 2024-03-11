@@ -1,9 +1,15 @@
-const { crearArchivo } = require('./modulos/multiplicar');
+const {crearArchivo} = require('./modulos/multiplicar');
+const {argv} = require('./modulos/argv');
 
-console.clear();
+const base = argv.base;
+// console.log(base);
 
-let base = 5;
+const limite = argv.limite;
+// console.log(limite);
 
-crearArchivo(base)
-    .then(response => console.log(`El archivo ${response} se creó correctamente`))
-    .catch(err => console.log(err));
+const listar = argv.listar;
+// console.log(listar);
+
+crearArchivo(base, limite, listar)
+        .then((nombreArchivo) => {console.log(nombreArchivo, " creado");})
+        .catch((err) =>{console.log(err);});

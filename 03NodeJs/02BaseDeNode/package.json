@@ -1,0 +1,22 @@
+{
+  "name": "basedenode",
+  "version": "0.1.0",
+  "description": "Base de Node",
+  "main": "app.js",
+  "scripts": {
+    "test1": "node app.js --base=5 --limite=10",
+    "test2": "node app.js --base=7 --limite=15"
+  },
+  "keywords": [
+    "Node",
+    "JS",
+    "javascript",
+    "npm"
+  ],
+  "author": "Zaki",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.4.0",
+    "yargs": "^17.7.2"
+  }
+}
