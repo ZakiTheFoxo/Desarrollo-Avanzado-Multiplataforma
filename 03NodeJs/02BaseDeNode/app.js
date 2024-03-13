@@ -1,6 +1,8 @@
 const {crearArchivo} = require('./modulos/multiplicar');
 const {argv} = require('./modulos/argv');
 
+console.clear();
+
 const base = argv.base;
 // console.log(base);
 

@@ -31,8 +31,6 @@ const argv = require('yargs')
         })
         .argv;
 
-console.clear();
-
 // const [,,arg3 = '--base=5', arg4 = '--limite=15'] = process.argv;
 
 // const [,base,] = arg3.split('=');
